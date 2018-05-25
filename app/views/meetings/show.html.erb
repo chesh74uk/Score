@@ -19,4 +19,31 @@
     </table>
 </div>
 
+<div class="table table-bordered">
+    <table>
+        <thead class="thead-dark">
+            <tr>
+                <th>Heat</th>
+                <th>Blue</th>
+                <th>Red</th>
+                <th>White</th>
+                <th>Yellow</th>
+                <th>Heat time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @meeting.races.each do |race| %>
+            <tr>
+                <td><%= race.heat_number %></td>
+                <td><%= race.blue_score %></td>
+                <td><%= race.red_score %></td>
+                <td><%= race.white_score %></td>
+                <td><%= race.yellow_score %></td>
+                <td><%= race.heat_time %></td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>
+
 <%= link_to "Back", meetings_path %>
