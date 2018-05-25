@@ -19,6 +19,10 @@
     </table>
 </div>
 
+<%= link_to "Add heat", new_race_path, class: "btn btn-lg btn-primary" %>
+
+<p></p>
+
 <div class="table table-bordered">
     <table>
         <thead class="thead-dark">
@@ -29,6 +33,7 @@
                 <th>White</th>
                 <th>Yellow</th>
                 <th>Heat time</th>
+                <th colspan="2"></th>
             </tr>
         </thead>
         <tbody>
@@ -40,6 +45,9 @@
                 <td><%= race.white_score %></td>
                 <td><%= race.yellow_score %></td>
                 <td><%= race.heat_time %></td>
+                <td><%= link_to 'Edit', edit_race_path(race) %></td>
+                <td><%= link_to 'Delete', race, method: :delete,
+                                     data: { confirm: 'Are you sure?' } %></td>
             </tr>
             <% end %>
         </tbody>
