@@ -9,7 +9,13 @@ class MeetingsController < ApplicationController
     
     def create
         @meeting = Meeting.create(meeting_params)
-        redirect_to @meeting
+        if @meeting.save
+            flash[:success] = "Meeting created"
+            redirect_to @meeting
+        else
+            flash[:alert] = "Try again!"
+            render :new
+        end
     end
     
     def show
