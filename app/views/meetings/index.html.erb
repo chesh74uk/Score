@@ -1,3 +1,26 @@
 <h1>Meetings index</h1>
 <p></p>
+
+<div class="table table-bordered">
+    <table>
+        <thead class="thead-dark">
+            <tr>
+                <th>Meeting date</th>
+                <th>Home team</th>
+                <th>Away team</th>
+            </tr>
+        </thead>
+        <tbody>
+            <%  @meetings.each do |m| %>
+            <tr>
+                <td><%= m.meeting_date %></td>
+                <td><%= m.home_team %></td>
+                <td><%= m.away_team %></td>
+            </tr>
+            <% end %>
+
+        </tbody>
+    </table>
+</div>
+
 <%= link_to "New meeting", new_meeting_path %>
