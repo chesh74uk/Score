@@ -9,4 +9,5 @@ feature "Create meetings" do
         click_button 'Create Meeting'
         expect(page).to have_content('Belle Vue')
     end
+
 end
