@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_25_111420) do
+ActiveRecord::Schema.define(version: 2018_05_25_150917) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,4 +23,18 @@ ActiveRecord::Schema.define(version: 2018_05_25_111420) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "races", force: :cascade do |t|
+    t.float "heat_time"
+    t.string "blue_score"
+    t.string "red_score"
+    t.string "white_score"
+    t.string "yellow_score"
+    t.integer "heat_number"
+    t.bigint "meeting_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["meeting_id"], name: "index_races_on_meeting_id"
+  end
+
+  add_foreign_key "races", "meetings"
 end
