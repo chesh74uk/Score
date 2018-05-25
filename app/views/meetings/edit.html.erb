@@ -1,8 +1,3 @@
 <h3>Edit meeting</h3>
 
-<%= simple_form_for @meeting do |f| %>
-    <%= f.input :meeting_date %>
-    <%= f.input :home_team %>
-    <%= f.input :away_team %>
-    <%= f.button :submit %>
-<% end %>
+<%= render 'form' %>
