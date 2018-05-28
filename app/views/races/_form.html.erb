@@ -4,7 +4,11 @@
     <%= r.input :red_score %>
     <%= r.input :white_score %>
     <%= r.input :yellow_score %>
-    <%= r.input :heat_number %>
+    <%= r.hidden_field :heat_number %>
+    <%= r.hidden_field :meeting_id %>
+
 
     <%= r.button :submit %>
 <% end %>
+
+

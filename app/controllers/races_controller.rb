@@ -1,7 +1,9 @@
 class RacesController < ApplicationController
     
     def new
-        @race = Race.new
+        @race = Race.new(:meeting_id => params[:meeting_id])
+        heat = Race.last
+        @race.heat_number = heat.heat_number + 1
     end
     
     def show
@@ -26,11 +28,11 @@ class RacesController < ApplicationController
     end
     
     def create
-        @meeting = Meeting.find(params[:id])
-        @race = @meeting.race.build(races_params)
+        
+        @race = Race.create(races_params)
         if @race.save
             flash[:success] = "Race created"
-            redirect_to @race
+            redirect_to (meeting_path(@race.meeting_id))
         else
             flash[:alert] = "Try again!"
             render :new

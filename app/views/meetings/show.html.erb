@@ -1,25 +1,21 @@
-<h1>Show meeting</h1>
+<h3>Meeting: <%= @meeting.meeting_date %></h3>
 
 <div class="table table-bordered">
     <table>
-        <thead class="thead-dark">
-            <tr>
-                <th>Meeting date</th>
-                <th>Home team</th>
-                <th>Away team</th>
-            </tr>
-        </thead>
         <tbody>
             <tr>
-                <td><%= @meeting.meeting_date %></td>
                 <td><%= @meeting.home_team %></td>
+                <td><%= @meeting.home_score %></td>
+            </tr>
+            <tr>
                 <td><%= @meeting.away_team %></td>
+                <td>%= @meeting.away_score %><</td>
             </tr>
         </tbody>
     </table>
 </div>
 
-<%= link_to "Add heat", new_race_path, class: "btn btn-lg btn-primary" %>
+<%= button_to "Add heat", new_race_path, params: {:meeting_id => @meeting.id}, method: :get, class: "btn btn-lg btn-primary" %>
 
 <p></p>
 
