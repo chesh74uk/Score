@@ -3,7 +3,7 @@ class RacesController < ApplicationController
     def new
         @race = Race.new(:meeting_id => params[:meeting_id])
         heat = Race.last
-        @race.heat_number = heat.heat_number + 1
+        heat ? @race.heat_number = heat.heat_number + 1 : @race.heat_number = 1
     end
     
     def show

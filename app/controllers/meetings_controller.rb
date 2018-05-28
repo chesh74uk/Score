@@ -20,7 +20,9 @@ class MeetingsController < ApplicationController
     end
     
     def show
-       @meeting = Meeting.find(params[:id]) 
+        @meeting = Meeting.find(params[:id]) 
+        @meeting.home_score = Race.sum(:blue_score) + Race.sum(:red_score)
+        @meeting.away_score = Race.sum(:white_score) + Race.sum(:yellow_score)
     end
     
     def edit
