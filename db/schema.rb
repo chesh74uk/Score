@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_28_184025) do
+ActiveRecord::Schema.define(version: 2018_05_28_185734) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2018_05_28_184025) do
   end
 
   create_table "races", force: :cascade do |t|
-    t.float "heat_time"
+    t.decimal "heat_time", precision: 4, scale: 2, null: false
     t.integer "blue_score"
     t.integer "red_score"
     t.integer "white_score"
