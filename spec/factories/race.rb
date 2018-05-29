@@ -2,6 +2,7 @@ require 'faker'
 
 FactoryBot.define do
     factory :race do
+        association :meeting, factory: :meeting, id: 1, strategy: :build
         heat_number 1
         blue_score 3
         red_score 2
