@@ -11,10 +11,15 @@ module Score
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
     
-    config.generators do |g|
-      g.view_specs false
-      g.helper_specs false
-    end
+config.generators do |g|
+  g.test_framework :rspec,
+    :fixtures => true,
+    :view_specs => false,
+    :helper_specs => false,
+    :routing_specs => false,
+    :controller_specs => true,
+    :request_specs => true
+end
     
     config.generators do |g|
       g.factory_bot false
