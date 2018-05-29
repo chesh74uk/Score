@@ -23,5 +23,9 @@ RSpec.describe Meeting, type: :model do
         @meeting.away_team = nil
         expect(@meeting).to_not be_valid
     end
+    
+    describe "Associations" do
+        it {should have_many(:races)}
+    end
         
 end

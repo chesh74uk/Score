@@ -37,6 +37,11 @@ describe Race do
         expect(@race).to_not be_valid
     end
     
-    it "is associated with a meeting"
+    describe "Associations" do
+        it { should belong_to(:meeting)}
+    end
+    
+
+    
     
 end
