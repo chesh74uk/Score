@@ -1,19 +1,24 @@
-<h3>Meeting: <%= @meeting.meeting_date.strftime("%A %B %C") %></h3>
-
-<div class="table table-borderless">
-    <table>
-        <tbody>
-            <tr>
-                <td><%= @meeting.home_team %>:</td>
-                <td><%= @meeting.home_score %></td>
-                <td><%= @meeting.away_team %>:</td>
-                <td><%= @meeting.away_score %></td>
-            </tr>
-            <tr>
-                
-            </tr>
-        </tbody>
-    </table>
+<div class="table-responsive">
+    <div class="table table-borderless">
+        <table>
+            <thead>
+                <tr >
+                    <th colspan = "3">Meeting: <%= @meeting.meeting_date.strftime("%A %B %C") %></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><%= @meeting.home_team %>:</td>
+                    <td><%= @meeting.home_score %></td>
+                    <td><%= @meeting.away_team %>:</td>
+                    <td><%= @meeting.away_score %></td>
+                </tr>
+                <tr>
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
 
 <%= button_to "Add heat", new_race_path, params: {:meeting_id => @meeting.id}, method: :get, class: "btn btn-lg btn-primary" %>
@@ -52,5 +57,3 @@
 </div>
 
 <%= link_to "Back", meetings_path %>
-
-<%= debug @meeting %>
