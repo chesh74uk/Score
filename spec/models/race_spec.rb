@@ -37,6 +37,11 @@ describe Race do
         expect(@race).to_not be_valid
     end
     
+    it "is invalid with a heat number greater than 15" do
+        @race.heat_number = 16
+        expect(@race).to_not be_valid
+    end
+    
     describe "Associations" do
         it { should belong_to(:meeting)}
     end
