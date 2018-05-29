@@ -1,6 +1,4 @@
-<h1>Meetings index</h1>
 <p></p>
-
 <div class="table table-bordered">
     <table>
         <thead class="thead-dark">
@@ -14,12 +12,12 @@
         <tbody>
             <%  @meetings.each do |meeting| %>
             <tr>
-                <td><%= meeting.meeting_date %></td>
+                <td><%= meeting.meeting_date.strftime("%A %B %C %G") %></td>
                 <td><%= meeting.home_team %></td>
                 <td><%= meeting.away_team %></td>
                 <td><%= link_to 'Show', meeting %></td>
                 <td><%= link_to 'Edit', edit_meeting_path(meeting) %></td>
-                <td><%= link_to 'Destroy', meeting, method: :delete,
+                <td><%= link_to 'Delete', meeting, method: :delete,
                                      data: { confirm: 'Are you sure?' } %></td>
             </tr>
             <% end %>
