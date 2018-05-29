@@ -1,15 +1,16 @@
 <h3>Meeting: <%= @meeting.meeting_date %></h3>
 
-<div class="table table-bordered">
+<div class="table table-borderless">
     <table>
         <tbody>
             <tr>
-                <td><%= @meeting.home_team %></td>
+                <td><%= @meeting.home_team %>:</td>
                 <td><%= @meeting.home_score %></td>
+                <td><%= @meeting.away_team %>:</td>
+                <td><%= @meeting.away_score %></td>
             </tr>
             <tr>
-                <td><%= @meeting.away_team %></td>
-                <td><%= @meeting.away_score %></td>
+                
             </tr>
         </tbody>
     </table>
