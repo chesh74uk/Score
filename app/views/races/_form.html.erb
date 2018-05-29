@@ -1,13 +1,11 @@
 <%= simple_form_for @race do |r| %>
     <%= r.input :heat_time %>
-    <%= r.input :blue_score %>
-    <%= r.input :red_score %>
+    <%= r.input :blue_score, input_html: { style: 'background-color: aliceblue' }  %>
+    <%= r.input :red_score, input_html: { style: 'background-color: pink' } %>
     <%= r.input :white_score %>
-    <%= r.input :yellow_score %>
+    <%= r.input :yellow_score, input_html: { style: 'background-color: lemonchiffon' } %>
     <%= r.hidden_field :heat_number %>
     <%= r.hidden_field :meeting_id %>
-
-
     <%= r.button :submit %>
 <% end %>
 
