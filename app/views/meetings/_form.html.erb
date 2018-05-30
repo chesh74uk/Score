@@ -2,10 +2,15 @@
     <%= f.input :meeting_date %>
     <%= f.input :home_team %>
     
-        <%= f.simple_fields_for :home_riders do |t| %>
-            <%= t.input :name %>
+        <%= f.simple_fields_for :home_riders do |h| %>
+            <%= h.input :name %>
         <% end %>
     
     <%= f.input :away_team %>
+    
+        <%= f.simple_fields_for :home_riders do |a| %>
+            <%= a.input :name %>
+        <% end %>
+        
     <%= f.button :submit %>
 <% end %>

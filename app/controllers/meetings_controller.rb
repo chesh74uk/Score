@@ -7,6 +7,7 @@ class MeetingsController < ApplicationController
     def new
         @meeting = Meeting.new
         7.times {@meeting.home_riders.build}
+        7.times {@meeting.away_riders.build}
     end
     
     def create
@@ -31,8 +32,6 @@ class MeetingsController < ApplicationController
     end
     
 
-    
-    
     def edit
         @meeting = Meeting.find(params[:id])
     end
