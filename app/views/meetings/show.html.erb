@@ -57,4 +57,5 @@
 </div>
 
 <%= link_to "Back", meetings_path %>
-<%= link_to "Home riders", meeting_home_riders_path %>
+<p></p>
+<%= link_to "Home riders", meeting_home_riders_path(:meeting_id => @meeting.id) %>

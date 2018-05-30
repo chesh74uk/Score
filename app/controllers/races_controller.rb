@@ -28,7 +28,6 @@ class RacesController < ApplicationController
     end
     
     def create
-        
         @race = Race.create(races_params)
         if @race.save
             flash[:success] = "Race created"
