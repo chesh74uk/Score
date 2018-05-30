@@ -1,6 +1,8 @@
 class HomeRidersController < ApplicationController
   
   def index
-    @riders = HomeRider.all
+    @meeting = Meeting.find(params[:meeting_id])
+    @riders = @meeting.home_riders
   end
 end
+
