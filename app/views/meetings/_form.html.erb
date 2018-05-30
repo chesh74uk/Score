@@ -1,6 +1,10 @@
 <%= simple_form_for @meeting do |f| %>
     <%= f.input :meeting_date %>
     <%= f.input :home_team %>
+        <%= f.simple_fields_for :home_rider do |t| %>
+            <%= t.input :name %>
+        <% end %>
+    
     <%= f.input :away_team %>
     <%= f.button :submit %>
 <% end %>
