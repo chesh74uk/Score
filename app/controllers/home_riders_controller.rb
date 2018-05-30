@@ -5,4 +5,3 @@ class HomeRidersController < ApplicationController
     @riders = @meeting.home_riders
   end
 end
-
