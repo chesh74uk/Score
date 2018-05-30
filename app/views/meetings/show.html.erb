@@ -8,9 +8,9 @@
             </thead>
             <tbody>
                 <tr>
-                    <td><%= @meeting.home_team %>:</td>
+                    <td><%= link_to (@meeting.home_team), meeting_home_riders_path(:meeting_id => @meeting.id) %>:</td>
                     <td><%= @meeting.home_score %></td>
-                    <td><%= @meeting.away_team %>:</td>
+                    <td><%= link_to (@meeting.away_team), meeting_away_riders_path(:meeting_id => @meeting.id) %>:</td>
                     <td><%= @meeting.away_score %></td>
                 </tr>
                 <tr>
@@ -57,6 +57,3 @@
 </div>
 
 <%= link_to "Back", meetings_path %>
-<p></p>
-<%= link_to "Home riders", meeting_home_riders_path(:meeting_id => @meeting.id) %>
-<%= link_to "Away riders", meeting_away_riders_path(:meeting_id => @meeting.id) %>
