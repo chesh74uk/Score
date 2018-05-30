@@ -6,6 +6,7 @@ class MeetingsController < ApplicationController
     
     def new
         @meeting = Meeting.new
+        7.times {@meeting.home_riders.build}
     end
     
     def create
@@ -44,7 +45,7 @@ class MeetingsController < ApplicationController
     private
     
     def meeting_params
-        params.require(:meeting).permit(:meeting_date, :home_team, :away_team)
+        params.require(:meeting).permit(:meeting_date, :home_team, :away_team, home_riders_attributes:[:name])
     end
     
 end
